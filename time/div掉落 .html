@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div掉落</title>
+	<style>
+		div{width:50px;height:50px;background:pink;position:absolute;left:0;top:0;transition:0.5s;}
+		/*img{ src:"./img/dongman.png"; }*/
+	</style>
+</head>
+<body>
+	<script>
+		var oDiv=document.getElementsByTagName('div');
+		var oImg=document.getElementsByTagName('img');
+		var aImg=['dong.png',];
+		var num=0;
+		var Img=0;
+			for (var i = 0; i < 10; i++) {
+				// document.getElementsByTagName('body')[0].innerHTML+='<div>'+i+aImg;
+				document.getElementsByTagName('body')[0].innerHTML+='<div>'+i;
+				// document.getElementsByTagName('body')[0].innerHTML+=
+				// '<div id="div3" style="backgroundImga= 'url('+ aImg[Img] ')'">'+i+'</div>';
+				// oDiv.style.backgroundImage += aImg[num];
+				oDiv[i].style.left = i*80+'px';
+				// oDiv[i].style.top = 450+'px';
+
+			}
+			document.onclick=function(){
+				// clearInterval(timer);
+			timer=setInterval(function(){
+				for (var j = 0; j < 10; j++) {
+				oDiv[j].style.top = 500+'px';
+				oDiv[j].style.left =j*100+'px';
+			}
+			},500);
+		};
+
+	</script>
+	<!-- <img src="dong.png" style="width:50px;height:50px;"> -->
+</body>
+</html>

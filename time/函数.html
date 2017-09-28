@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数封装</title>
+	<style>
+		input{width:50px;height:30px;font-size:18px;margin-left:300px;color:orange;}
+		#div1{width:200px;height:200px;background:url(dong.png);background-size:100% 100%;border-radius:20px;left:400px;position:absolute;top:100px;}
+	</style>
+</head>
+<body>
+	<input type="button" value="后退" id="in1">
+	<input type="button" value="前进" id="in2">
+	<input type="button" value="下降" id="in3">
+	<input type="button" value="上升" id="in4">
+	<div id="div1"></div>
+
+	<script>
+	var oInput1=document.getElementById('in1');
+	var oInput2=document.getElementById('in2');
+	var oInput3=document.getElementById('in3');
+	var oInput4=document.getElementById('in4');
+	var oDiv=document.getElementById('div1');
+
+		oInput2.onclick=function(){//前进
+			 clearInterval(oDiv.timer);  //清除定时器
+		oDiv.timer=setInterval(function(){
+					oDiv.style.left=600+'px';
+					clearInterval(oDiv.timer);  //清除定时器
+			},500);
+			
+		}   //后退
+		oInput1.onclick=function(){
+				clearInterval(oDiv.timer1);
+			oDiv.timer1=setInterval(function(){
+					oDiv.style.left=300+'px';
+					clearInterval(oDiv.timer1);
+				},800)
+		}
+		oInput3.onclick=function(){
+				clearInterval(oDiv.timer);
+			oDiv.timer=setInterval(function(){
+				oDiv.style.top=500+'px';
+				clearInterval(oDiv.timer);
+			},1000);
+		}
+		oInput4.onclick=function(){
+			clearInterval(oDiv.timer);
+			oDiv.timer=setInterval(function(){
+				oDiv.style.top=200+'px';
+				clearInterval(oDiv.timer);
+			},2000)
+		}
+
+
+	</script>
+</body>
+</html>
